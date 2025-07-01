@@ -7,7 +7,6 @@ function Navbar() {
           <nav className="space-x-6"></nav>
         </div>
       </header>
-      ;
     </>
   );
 }
