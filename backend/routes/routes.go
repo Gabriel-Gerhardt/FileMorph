@@ -8,7 +8,8 @@ import (
 )
 
 func ReturnRoutes(r *gin.Engine, db *gorm.DB) {
-	controller := handlers.UserController{DB: db}
+	controller := handlers.NewUserController(db)
+
 	r.GET("", handlers.Test)
 	r.GET("/users", controller.GetUsers)
 	r.POST("/users", controller.PostUser)
