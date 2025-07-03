@@ -38,3 +38,13 @@ func (u *userController) PostUser(c *gin.Context) {
 	}
 	c.JSON(200, user)
 }
+
+func (u *userController) GetUserById(c *gin.Context) {
+	id := c.Param("id")
+	var user models.User
+	if err := u.db.First(&user, id).Error; err != nil {
+		c.JSON(500, gin.H{"Error in finding user": err.Error()})
+		return
+	}
+	c.JSON(200, user)
+}

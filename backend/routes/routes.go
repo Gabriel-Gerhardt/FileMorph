@@ -13,4 +13,6 @@ func ReturnRoutes(r *gin.Engine, db *gorm.DB) {
 	r.GET("", handlers.Test)
 	r.GET("/users", controller.GetUsers)
 	r.POST("/users", controller.PostUser)
+	r.GET("/users/:id", controller.GetUserByID)
+
 }

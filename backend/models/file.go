@@ -9,5 +9,5 @@ type File struct {
 	UserID uint
 	Name   string
 	Type   string
-	Data   []byte `gorm:"type:bytea"` // use "BLOB" para MySQL, "bytea" para PostgreSQL
+	Data   []byte `gorm:"type:bytea"`
 }
