@@ -6,6 +6,7 @@ import (
 
 type User struct {
 	gorm.Model
-	Name  string
-	Files []File // use "BLOB" para MySQL, "bytea" para PostgreSQL
+	Name     string
+	Password string
+	Files    []File
 }
