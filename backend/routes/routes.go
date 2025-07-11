@@ -8,12 +8,13 @@ import (
 )
 
 func ReturnRoutes(r *gin.Engine, db *gorm.DB) {
-	controller := handlers.NewUserController(db)
+	userController := handlers.NewUserController(db)
 	fileController := handlers.NewFileController(db)
 	r.GET("", handlers.Test)
-	r.GET("/users", controller.GetUsers)
-	r.POST("/users", controller.PostUser)
-	r.GET("/users/:id", controller.GetUserById)
+	r.GET("/users", userController.GetUsers)
+	r.POST("/users", userController.PostUser)
+	r.GET("/users/id/:id", userController.GetUserById)
 	r.POST("/file", fileController.PostFile)
+	r.GET("/users/name/:name", userController.GetUserByName)
 
 }
