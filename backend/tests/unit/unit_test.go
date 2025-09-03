@@ -17,7 +17,7 @@ func TestPostUserHandler(t *testing.T) {
 
 	rr := httptest.NewRecorder()
 
-	handler := http.HandlerFunc(handlers.PostUser) // substitua com sua função real
+	handler := http.HandlerFunc(handlers.GetUsers()) // substitua com sua função real
 	handler.ServeHTTP(rr, req)
 
 	if rr.Code != http.StatusBadRequest {
